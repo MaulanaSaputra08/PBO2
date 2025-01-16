@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LaporanTabungan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b1d56b23-cfa3-4d0a-8f76-7399066541c3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM tabungan]]>
+	</queryString>
+	<field name="id_tabungan" class="java.lang.Integer"/>
+	<field name="kode_anggota" class="java.lang.Integer"/>
+	<field name="saldo" class="java.math.BigDecimal"/>
+	<field name="tanggal_pembuatan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="d8703124-5af1-4591-a8cf-9db675c12105"/>
+				<text><![CDATA[Laporan Data Tabungan]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="20da9a16-72f8-4c62-a8aa-e1db01137916"/>
+				<text><![CDATA[Data Tabungan Anggota]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="20" uuid="4f339745-2aca-4a56-9d89-6fab534d3915"/>
+				<text><![CDATA[ID Tabungan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="0" width="120" height="20" uuid="36c1b636-b366-484a-9a0b-a9858d098c19"/>
+				<text><![CDATA[Kode Anggota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="120" height="20" uuid="14bb9e98-c0dc-4eec-beb6-8997b592a2e5"/>
+				<text><![CDATA[Saldo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="200" height="20" uuid="b70eb578-db3c-4a47-ac6b-b5d35e40db07"/>
+				<text><![CDATA[Tanggal Pembuatan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="80" height="20" uuid="b36c7aa0-42b3-464f-b0a4-6ccf21eb16a6"/>
+				<textFieldExpression><![CDATA[$F{id_tabungan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="0" width="120" height="20" uuid="4a118fba-85cc-474d-a9c5-14d1e84e3be8"/>
+				<textFieldExpression><![CDATA[$F{kode_anggota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="120" height="20" uuid="eb83613a-1b7f-4dc6-a665-1f664169d55a"/>
+				<textFieldExpression><![CDATA[$F{saldo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="200" height="20" uuid="d2a821a1-563d-4d60-b353-6eac0520eb28"/>
+				<textFieldExpression><![CDATA[$F{tanggal_pembuatan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="911f9069-affb-4a7a-aa31-c5fa0bffe494"/>
+				<text><![CDATA[Halaman Laporan Data Tabungan]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
